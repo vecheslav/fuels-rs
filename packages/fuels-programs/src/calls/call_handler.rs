@@ -32,7 +32,7 @@ use crate::{
 
 // Trait implemented by contract instances so that
 // they can be passed to the `with_contracts` method
-pub trait ContractDependency {
+pub trait ContractDependency: Send {
     fn id(&self) -> Bech32ContractId;
     fn log_decoder(&self) -> LogDecoder;
 }
